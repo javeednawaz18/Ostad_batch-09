@@ -139,3 +139,77 @@ python manage.py test
 
 This project is open source and available for educational purposes.
 
+
+I am using my local ubuntu  machine and that has a public ip. Below were the steps to deploy the application in my local machine.
+
+1. Update and Install Required Packages
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3 python3-pip python3-venv git -y
+
+
+2. 2. Clone the Project from Git
+
+git clone https://github.com/latifurrafi/Ostad_batch-09.git
+Cd Ostad_batch-09
+
+3. Create and Activate Virtual Environment
+
+python3 -m venv venv 
+source venv/bin/activate 
+
+4. Install Dependencies
+
+pip install -r requirements.txt
+
+5. Install l Django and Gunicorn manually as it was not on requirement.txt file
+pip install django gunicorn
+
+6. Configure Django Settings
+ALLOWED_HOSTS = ['my_public_ip']
+7. Apply Database Migrations
+No migration needed though
+
+8. Run the Application with Gunicorn
+
+venv/bin/gunicorn --bind 0.0.0.0:8000 projectfolder.wsgi
+
+9. I can access the app via below link:
+
+http://165.101.100.140:8000/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
